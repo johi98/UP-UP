@@ -9,6 +9,7 @@ public class CubeMove : MonoBehaviour
     private Vector3 MPosition;
     private Vector3 termP;
     public bool playerOn;
+    public float speed;
 
 
 
@@ -20,7 +21,8 @@ public class CubeMove : MonoBehaviour
         termP = MPosition;
         MPosition = new Vector3(termP.x, transform.position.y, termP.z);
         playerOn = false;
-}
+        speed = Random.Range(4,4);
+     }
 
     // Update is called once per frame
     void Update()
@@ -32,7 +34,7 @@ public class CubeMove : MonoBehaviour
     {
         if (playerOn == false)
         {
-            transform.position = Vector3.MoveTowards(transform.position, MPosition, 3 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, MPosition, speed * Time.deltaTime);
         }
 
     }

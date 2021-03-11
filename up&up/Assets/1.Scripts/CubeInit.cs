@@ -20,8 +20,9 @@ public class CubeInit : MonoBehaviour
         if(other.gameObject.tag == "Player"&& isInit ==false)
         {
             CM.playerOn = true;
-            
-            Instantiate(initCube, new Vector3( -4, GameManager.high , 11), Quaternion.identity);
+            float xRange = Random.Range(-8,8);
+            float zRange = Random.Range(7, 12);
+            Instantiate(initCube, new Vector3( xRange, GameManager.high +2, zRange), Quaternion.identity);
 
             GameManager.high += 1;
 

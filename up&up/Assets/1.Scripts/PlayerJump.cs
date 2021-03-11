@@ -8,6 +8,7 @@ public class PlayerJump : MonoBehaviour
     public float jumpPower =20;
     public float distToGround = 0.6f;
     bool grounded = false;
+    bool onEnemy = false;
     bool jumpT = false;
     Rigidbody rig;
 
@@ -20,14 +21,18 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         CheckGround();
+        Vector3 rayPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f, gameObject.transform.position.z);
+        Debug.DrawRay(rayPosition, Vector3.down, Color.green, distToGround);
+     
     }
 
     private void FixedUpdate()
     {
-        if(grounded == true && jumpT ==true )
+        if((grounded||onEnemy) && jumpT ==true )
         {
             rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
             jumpT = false;
+         
         }
 
     }
@@ -47,5 +52,6 @@ public class PlayerJump : MonoBehaviour
         }
         grounded = false;
     }
+
 
 }
