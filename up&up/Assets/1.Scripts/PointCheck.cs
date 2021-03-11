@@ -21,6 +21,8 @@ public class PointCheck : MonoBehaviour
 
             distanceCheck = Vector3.Distance(playerPosition, EnemyPosition);
 
+
+
             if(distanceCheck<0.1)
             {
                 GameManager.score += 100;
@@ -42,6 +44,9 @@ public class PointCheck : MonoBehaviour
                 Debug.Log("Bad");
             }
 
+          
+
+            pointCheck = true;
             
         }
     }

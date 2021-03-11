@@ -21,7 +21,7 @@ public class CubeMove : MonoBehaviour
         termP = MPosition;
         MPosition = new Vector3(termP.x, transform.position.y, termP.z);
         playerOn = false;
-        speed = Random.Range(4, 9);
+        speed = Random.Range(4,4);
      }
 
     // Update is called once per frame

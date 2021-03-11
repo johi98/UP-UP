@@ -22,7 +22,7 @@ public class CubeInit : MonoBehaviour
             CM.playerOn = true;
             float xRange = Random.Range(-8,8);
             float zRange = Random.Range(7, 12);
-            Instantiate(initCube, new Vector3( xRange, GameManager.high , zRange), Quaternion.identity);
+            Instantiate(initCube, new Vector3( xRange, GameManager.high +2, zRange), Quaternion.identity);
 
             GameManager.high += 1;
 
