@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# 자동 생성 된 파일
+InitTestScene * .unity.meta
+InitTestScene * .unity
